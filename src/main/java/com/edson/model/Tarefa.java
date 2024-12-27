@@ -1,25 +1,25 @@
-package com.edson;
+package com.edson.model;
+
+import com.edson.enums.Status;
 
 public class Tarefa {
+    private static int contadorId = 1;
     private int id;
     private String descricao;
-    private String status;
+    private Status status;
 
     public Tarefa() {
+        this.id = contadorId++;
     }
 
-    public Tarefa(int id, String descricao, String status) {
-        this.id = id;
+    public Tarefa(String descricao, Status status) {
+        this.id = contadorId++;
         this.descricao = descricao;
         this.status = status;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getDescricao() {
@@ -30,11 +30,11 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
