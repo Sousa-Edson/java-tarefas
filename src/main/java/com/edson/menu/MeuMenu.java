@@ -9,5 +9,6 @@ public class MeuMenu {
         System.out.println("3-buscar tarefa");
         System.out.println("4-atualizar tarefa");
         System.out.println("5-remover tarefa");
+        System.out.println("0-sair");
     }
 }

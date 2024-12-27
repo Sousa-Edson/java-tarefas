@@ -18,6 +18,12 @@ public class Tarefa {
         this.status = status;
     }
 
+    public Tarefa(int id, String descricao, Status status) {
+        this.id = id;
+        this.descricao = descricao;
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }
@@ -36,6 +42,10 @@ public class Tarefa {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public static void atualizarContadorId(int maiorId) {
+        contadorId = maiorId + 1;
     }
 
     @Override

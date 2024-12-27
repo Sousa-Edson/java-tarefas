@@ -1,5 +1,6 @@
 package com.edson;
 
+import com.edson.arquivo.GerenciadorArquivo;
 import com.edson.menu.MeuMenu;
 import com.edson.mock.MeuMock;
 import com.edson.model.Tarefa;
@@ -16,8 +17,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         List<Tarefa> tarefas = new ArrayList<>();
-        MeuMock.mock(tarefas);
-
+//        MeuMock.mock(tarefas);
+        GerenciadorArquivo.carregarTarefas(tarefas);
 
         boolean sair = false;
         do {
@@ -47,6 +48,10 @@ public class Main {
                         System.out.println("Remover tarefa");
                         DeletarTarefas.deletarTarefa(tarefas);
                         break;
+                    case 0:
+                        System.out.println("Saindo do programa...");
+                        sair = true;
+                        break;
                     default:
                         System.out.println("Opção inválida");
                         break;
@@ -56,6 +61,6 @@ public class Main {
                 scanner.nextLine();
             }
         } while (!sair);
-
+        GerenciadorArquivo.salvarTarefas(tarefas);
     }
 }

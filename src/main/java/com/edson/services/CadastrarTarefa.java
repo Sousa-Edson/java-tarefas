@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CadastrarTarefa {
+    private static final String CAMINHO_ARQUIVO = "tarefas.txt";
     public static void cadastrarTarefa(List<Tarefa> tarefas) {
         System.out.println("#Cadastrar tarefa");
         Scanner scanner = new Scanner(System.in);
